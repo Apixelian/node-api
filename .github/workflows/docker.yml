@@ -1,0 +1,25 @@
+name: Construir y subir la imagen de Docker
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Verificar Codigo
+        uses: actions/checkout@v4
+
+      - name: Inicio de Sesion en Docker
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Construir imagen
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/mi-api:latest .
+      
+      - name: Hacer push de la imagen
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/mi-api:latest 
