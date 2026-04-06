@@ -1,0 +1,3 @@
+services: 
+  miapi:
+    image: marianaolivas/node-api:latest
