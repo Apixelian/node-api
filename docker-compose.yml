@@ -1,3 +1,10 @@
 services: 
   miapi:
     image: marianaolivas/node-api:latest
+    container_name: mi-api
+    restart: always
+    ports:
+      - "3000:3000"
+
+# Docker compose up -d 
+# para levantar el contenedor
