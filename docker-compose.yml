@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 services: 
   miapi:
     image: pixelian/node-api:latest
