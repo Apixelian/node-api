@@ -1,6 +1,6 @@
 services: 
   miapi:
-    image: marianaolivas/node-api:latest
+    image: pixelian/node-api:latest
     container_name: mi-api
     restart: always
     ports:
